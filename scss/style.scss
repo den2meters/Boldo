@@ -6,9 +6,11 @@
 
 /*-----------Wrapper--------*/
 body {
+   user-select: none;
    font-family: 'Open Sans';
    font-style: normal;
    font-weight: 400;
+
 }
 .wrapper {
    display: flex;
@@ -82,9 +84,6 @@ body {
       display: flex;
       justify-content: start;
       align-items: center;
-      @media (max-width: 600px) {
-         display: none;
-      }
    }
    
 
@@ -108,22 +107,14 @@ body {
       @media (max-width: 600px) {
          display: none;
       }
-   }
-   &__burger {
-      display: none;
-      @media (max-width: 600px) {
-         display: block;
-         padding: 0px 15px 0px 0px;
+      transition: all 0.2s ease-in;
+      &:hover {
+         background-color: #4FE9A4;
       }
-   }
-
-   &__burger-menu {
-      background-color: #000;
    }
 }
 
 .logo {
-
    &__image {
       margin: 0px 11.3px 0px 0px;
    }
@@ -144,11 +135,18 @@ body {
 
    &__link {
       margin: 0px 40px 0px 0px;
+      @media (max-width: 600px) {
+         margin: 0px 10px 0px 0px;
+      }
       a {
          font-weight: 600;
          font-size: 16px;
          line-height: 178%;
          color: #FFFFFF;
+      }
+      transition: all 0.2s ease-in;
+      &:hover {
+         text-decoration: underline;
       }
    }
 }
@@ -330,7 +328,7 @@ body {
    }
 
    &__buy {
-      background-color: #65E4A3;
+
       width: 247px;
       height: 60px;
       margin: 0px 24px 0px 0px;
@@ -341,7 +339,14 @@ body {
       font-weight: 700;
       font-size: 20px;
       line-height: 140%;
-      color: #0A2640;
+      border: 2px solid #FFFFFF;
+      transition: all 0.2s ease-in;
+      color: #FFFFFF;
+      &:hover {
+         background-color: #4FE9A4;
+         color: #0A2640;
+         border: 2px solid #4FE9A4;
+      }
       @media (max-width: 980px) {
          margin: 0px 0px 20px 0px;
          width: 200px;
@@ -363,6 +368,12 @@ body {
       font-size: 20px;
       line-height: 140%;
       color: #FFFFFF;
+      transition: all 0.2s ease-in;
+      &:hover {
+         background-color: #4FE9A4;
+         color: #0A2640;
+         border: 2px solid #4FE9A4;
+      }
       @media (max-width: 980px) {
          width: 200px;
       }
@@ -491,6 +502,10 @@ body {
       align-self: center;
       margin: 0px 0px 24px 0px;
       width: 100%;
+      transition: all 0.2s ease-in;
+      &:hover {
+         transform: translate(0, -5px);
+      }
       img {
          width: 100%;
          height: 100%;
@@ -719,6 +734,10 @@ body {
          background: url('../img/Connect/check.svg') 6px 6px no-repeat;
          background-color: #0A2640;
       }
+      transition: all 0.2s ease-in;
+      &:hover {
+         transform: scale(1.05);
+      }
    }
 
    &__button {
@@ -729,11 +748,15 @@ body {
       justify-content: center;
       align-items: center;
       border-radius: 30px;
-      a {
-         font-weight: 700;
-         font-size: 20px;
-         line-height: 140%;
-         color: #FFFFFF;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 140%;
+      color: #fff;
+      transition: all 0.2s ease-in;
+      &:hover {
+         background-color: #4FE9A4;
+         border: 2px solid #0A2640;
+         color: #0A2640;
       }
    }
 }
@@ -776,12 +799,9 @@ body {
       box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.08);
       border-radius: 4px;
       padding: 0px 0px 0px 60px;
+      transition: all 0.2s ease-in;
       &:not(:last-child) {
          margin: 0px 0px 24px 0px;
-      }
-      &:nth-child(1) {
-         background-color: #0A2640;
-         color: #fff;
       }
       &:nth-child(1):before {
          content: '';
@@ -791,7 +811,7 @@ body {
          width: 28px;
          height: 28px;
          border-radius: 18px;
-         background: url('../img/Connect/star.svg') 0px 0px no-repeat;
+         background: url('../img/Connect/star-dark.svg') 0px 0px no-repeat;
       }
       &:nth-child(2):before {
          content: '';
@@ -801,7 +821,7 @@ body {
          width: 28px;
          height: 28px;
          border-radius: 18px;
-         background: url('../img/Connect/eay.svg') 0px 0px no-repeat;
+         background: url('../img/Connect/eay-dark.svg') 0px 0px no-repeat;
       }
       &:nth-child(3):before {
          content: '';
@@ -811,7 +831,20 @@ body {
          width: 28px;
          height: 28px;
          border-radius: 18px;
-         background: url('../img/Connect/sun.svg') 0px 0px no-repeat;
+         background: url('../img/Connect/sun-dark.svg') 0px 0px no-repeat;
+      }
+      &:hover {
+         background-color: #0A2640;
+         color: #fff;
+         &:nth-child(1):before {
+            background: url('../img/Connect/star-white.svg') 0px 0px no-repeat;
+         }
+         &:nth-child(2):before {
+            background: url('../img/Connect/eay-white.svg') 0px 0px no-repeat;
+         }
+         &:nth-child(3):before {
+            background: url('../img/Connect/sun-white.svg') 0px 0px no-repeat;
+         }
       }
    }
 } 
@@ -885,6 +918,12 @@ body {
       height: 72px;
       background-color: #fff;
       border-radius: 36px;
+      transition: all 0.2s ease-in;
+      cursor: pointer;
+      &:hover {
+         transform: scale(1.1);
+         box-shadow: 0px 0px 10px #FFFFFF;
+      }
    }
 
    &__columns {
@@ -927,6 +966,10 @@ body {
       border-radius: 12px;
       @media (max-width: 980px) {
          padding: 30px;
+      }
+      transition: all 0.2s ease-in;
+      &:hover {
+         transform: scale(1.01);
       }
    }
 
@@ -1168,18 +1211,23 @@ body {
    }
 
    &__button {
+      display: block;
       width: 219px;
       height: 60px;
-      border: 2px solid #0A2640;
       border-radius: 56px;
       display: flex;
       justify-content: center;
       align-items: center;
-      a {
-         font-weight: 700;
-         font-size: 20px;
-         line-height: 140%;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 140%;
+      color: #FFFFFF;
+      background-color: #0A2640;
+      transition: all 0.2s ease-in;
+      &:hover {
+         border: 2px solid #0A2640;
          color: #0A2640;
+         background-color: #4FE9A4;
       }
    }
 }
@@ -1331,16 +1379,21 @@ body {
    &__button {
       width: 210px;
       height: 60px;
-      background-color: #65E4A3;
+      background-color: #0A2640;
       border-radius: 56px;
       display: flex;
       justify-content: center;
       align-items: center;
-      a {
-         font-weight: 700;
-         font-size: 20px;
-         line-height: 140%;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 140%;
+      color: #fff;
+      border: 2px solid #fff;
+      transition: all 0.2s ease-in;
+      &:hover {
+         border: 2px solid #0A2640;
          color: #0A2640;
+         background-color: #4FE9A4;
       }
    }
 }
@@ -1541,10 +1594,6 @@ body {
       display: flex;
       justify-content: start;
       align-items: center;
-
-      @media (max-width: 600px) {
-         display: none;
-      }
    }
 
 
@@ -1557,8 +1606,12 @@ body {
       font-weight: 700;
       background-color: #fff;
       border: 2px solid #0A2640;
-
+      transition: all 0.2s ease-in;
+      &:hover {
+         background-color: #4FE9A4;
+      }
       a {
+         color: #0A2640;
          font-size: 16px;
          line-height: 150%;
       }
@@ -1572,19 +1625,6 @@ body {
       @media (max-width: 600px) {
          display: none;
       }
-   }
-
-   &__burger {
-      display: none;
-
-      @media (max-width: 600px) {
-         display: block;
-         padding: 0px 15px 0px 0px;
-      }
-   }
-
-   &__burger-menu {
-
    }
 }
 
@@ -1610,6 +1650,13 @@ body {
 
    &__link {
       margin: 0px 40px 0px 0px;
+      @media (max-width: 600px) {
+         margin: 0px 10px 0px 0px;
+      }
+      transition: all 0.2s ease-in;
+      &:hover {
+         text-decoration: underline;
+      }
       a {
          font-weight: 600;
          font-size: 16px;
